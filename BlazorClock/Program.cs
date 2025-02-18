@@ -26,6 +26,8 @@ namespace BlazorClock
 
             app.UseAntiforgery();
 
+            app.MapStaticAssets();
+
             app.MapRazorComponents<App>()
                 .AddInteractiveServerRenderMode();
 

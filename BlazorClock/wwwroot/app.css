@@ -1,4 +1,4 @@
-h1:focus {
+﻿h1:focus {
     outline: none;
 }
 
@@ -28,32 +28,97 @@ h1:focus {
     border-color: #929292;
 }
 
-.form-floating > .form-control-plaintext::placeholder, .form-floating > .form-control::placeholder {
+.form-floating > .form-control-plaintext::placeholder,
+.form-floating > .form-control::placeholder {
     color: var(--bs-secondary-color);
     text-align: end;
 }
 
-.form-floating > .form-control-plaintext:focus::placeholder, .form-floating > .form-control:focus::placeholder {
+.form-floating > .form-control-plaintext:focus::placeholder,
+.form-floating > .form-control:focus::placeholder {
     text-align: start;
 }
+
 .clock-container {
     max-width: 500px;
-    margin: 0 auto; 
-    background-color: #f8f9fa; 
+    margin: 0 auto;
+    background-color: #f8f9fa;
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    padding: 1.5rem; 
+    transition: background-color 0.3s ease; 
 }
+
+    .clock-container:hover {
+        background-color: #f1f3f5; 
+    }
 
 .clock-time {
     font-size: 3rem;
     font-weight: bold;
-    color: #0d6efd; 
+    color: #0d6efd;
     margin-bottom: 0.5rem;
+    transition: transform 0.2s ease, color 0.2s ease; 
 }
+
+    .clock-time:hover {
+        transform: scale(1.04); 
+        color: #084298; 
+    }
 
 .clock-date {
     font-size: 1.5rem;
-    color: #6c757d; 
+    color: #6c757d;
     margin-bottom: 1rem;
+    transition: color 0.2s ease;
 }
 
+    .clock-date:hover {
+        color: #495057; 
+        text-decoration: underline;
+    }
+
+.home-container {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.05);
+    text-align: center;
+    position: relative; 
+    overflow: hidden; 
+}
+
+    .home-container::before {
+        content: "";
+        position: absolute;
+        top: -3rem;
+        left: -3rem;
+        width: 8rem;
+        height: 8rem;
+        background: radial-gradient(circle, #f8f9fa 0%, #e9ecef 100%);
+        opacity: 0.3;
+        border-radius: 50%;
+        transform: rotate(-20deg);
+    }
+
+    .home-container::after {
+        content: "";
+        position: absolute;
+        bottom: -3rem;
+        right: -3rem;
+        width: 10rem;
+        height: 10rem;
+        background: radial-gradient(circle, #f8f9fa 0%, #e9ecef 100%);
+        opacity: 0.3;
+        border-radius: 50%;
+        transform: rotate(30deg);
+    }
+
+.home-title {
+    font-size: 2rem;
+    color: #333;
+    margin-bottom: 1rem;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.15); 
+}
